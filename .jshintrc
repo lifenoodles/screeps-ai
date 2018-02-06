@@ -1,0 +1,8 @@
+{
+  "jasmine": true,
+  "varstmt": true,
+  "latedef": true,
+  "camelcase": true,
+  "node": true,
+  "esversion": 6
+}
