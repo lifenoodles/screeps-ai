@@ -1,7 +1,16 @@
 const main = require('../src/main.js');
+const core = require('../src/core.js');
+const globals = require('../src/globals.js');
 
-describe('a sample set of tests', function() {
-    it('puts the lotion on its skin', function() {
-        expect(main.proofOfConcept(5)).toBe(5);
+describe('behaviour of the main loop', function() {
+    it('assigns a configuration value to memory', function() {
+        spyOn(core, 'tick');
+        main.loop();
+        expect(globals.Memory.configuration).toBeDefined();
+    });
+    it('ticks the core', function() {
+        spyOn(core, 'tick');
+        main.loop();
+        expect(core.tick).toHaveBeenCalled();
     });
 });

@@ -4,14 +4,15 @@
 const jshint = require('gulp-jshint');
 const gulp = require('gulp');
 const jasmine = require('gulp-jasmine');
+const replace = require('gulp-replace');
 
 const SPECS = './spec/*.js';
 const JS_SRC = './src/*.js';
-const TARGET = './dist/';
+const TARGET = 'C:\\Users\\donag_000\\AppData\\Local\\Screeps\\scripts\\lifenoodles_com___21025\\default\\';
 
-gulp.task('test', () =>
+gulp.task('test', function() {
     gulp.src(SPECS).pipe(jasmine())
-);
+});
 
 gulp.task("lint", function() {
     return gulp.src(JS_SRC)
@@ -22,6 +23,8 @@ gulp.task("lint", function() {
 
 gulp.task('copy', function () {
     return gulp.src(JS_SRC)
+        // replace file names with module names for require statements
+        .pipe(replace(/\.\/(.*)\.js/g, '$1'))
         .pipe(gulp.dest(TARGET));
 });
 
