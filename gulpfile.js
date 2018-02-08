@@ -11,7 +11,7 @@ const JS_SRC = './src/*.js';
 const TARGET = './dist/';
 
 gulp.task('test', function() {
-    gulp.src(SPECS).pipe(jasmine())
+    gulp.src(SPECS).pipe(jasmine({ includeStackTrace: true }))
 });
 
 gulp.task("lint", function() {
