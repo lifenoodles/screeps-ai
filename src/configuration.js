@@ -3,7 +3,7 @@ const base = {
     'isDebug': false
 };
 
-const debug = Object.assign(base, {
+const debug = Object.assign({}, base, {
     'logLevel': 'debug',
     'isDebug': true
 });
