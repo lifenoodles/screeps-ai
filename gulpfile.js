@@ -8,7 +8,7 @@ const replace = require('gulp-replace');
 
 const SPECS = './spec/*.js';
 const JS_SRC = './src/*.js';
-const TARGET = 'C:\\Users\\donag_000\\AppData\\Local\\Screeps\\scripts\\lifenoodles_com___21025\\default\\';
+const TARGET = './dist/';
 
 gulp.task('test', function() {
     gulp.src(SPECS).pipe(jasmine())
