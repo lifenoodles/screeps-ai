@@ -1,11 +1,11 @@
 const configuration = require('./configuration.js');
 const core = require('./core.js');
-const globals = require('./globals.js');
+const state = require('./state.js');
 
 /**
  * Main entry point, set up configuration and start engine.
  */
 module.exports.loop = function () {
-    globals.Memory.configuration = configuration.base;
-    core.tick(globals);
+    state.memory().configuration = configuration.debug;
+    core.tick(state);
 };
